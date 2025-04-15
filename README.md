@@ -20,7 +20,7 @@ Automated end-to-end (E2E) test suite developed with [TestCafe](https://testcafe
    Developed a utility method that verifies whether the correct outbound and return routes are displayed after a search is performed.
 
    Initial failures in tests for routes were caused by:
-   - A modal popup (e.g. cookie consent) blocking UI interactions.
+   - A modal popup (e.g. ky-notice) blocking UI interactions.
    - Timing issues where quote elements were not fully visible or loaded.
    
    These issues were partially mitigated. The tests now:

@@ -46,14 +46,14 @@ const clickPopup = async () => {
     if (await dealfinderContainer.exists && await popupContainer.visible) {
         try {
             await t
-                .expect(cookieButton.exists).ok('Cookie accept button not found')
+                .expect(cookieButton.exists).ok('Cky-notice accept button not found')
                 .click(cookieButton);
-            console.log('Popup accepted');
+            console.log('ky-notice Popup accepted');
         } catch (e) {
-            console.log('Cookie popup appeared but could not be clicked. Skipping.');
+            console.log('ky-notice Popup appeared but could not be clicked. Skipping.');
         }
     } else {
-        console.log('Cookie popup not visible, skipping.');
+        console.log('cky-notice Popup not visible, skipping.');
     }
 };
 
