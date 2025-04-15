@@ -54,15 +54,12 @@ const verifyH1InsideWrapper = site =>
             en: 'Ferry Tickets',             // English text
             it: 'Biglietti per i vostri traghetti'  // Italian text
         };
-        
-        // Get the expected text based on the site language
+     
         const expected = expectedTexts[site.lang];
 
-        // Check if <h1> exists inside .wrapper
         await t
             .expect(heading.exists).ok('<h1> not found inside .wrapper');
         
-        // Call the verifyHeadingText function to check if the <h1> text is correct
         await verifyHeadingText(t, heading, expected);
     });
 
