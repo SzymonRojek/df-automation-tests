@@ -16,8 +16,7 @@ Automated end-to-end (E2E) test suite developed with [TestCafe](https://testcafe
    `https://account.directferries.com/?culture=en-GB`  
    (2 tests are expected to fail to validate proper error handling).
 
-   I would add data-driven test login with email and booking reference:
-   This test checks whether a user can successfully log in to the system using valid credentials (email and booking reference) in the testing environment. It uses data-driven testing to run the same login scenario with multiple sets of input data.
+   **NOTE**: It is definitely worth adding a test that verifies whether a user can log in to the application using valid credentials. This test is an example of a **data-driven** test. It checks whether a user can successfully log in to the system using correct data (email and booking reference) in the testing environment. The test uses a data-driven approach to run the same login scenario with multiple sets of input data.
 
 3. **Route-Check Feature**  
    Developed a utility method that verifies whether the correct outbound and return routes are displayed after a search is performed.
