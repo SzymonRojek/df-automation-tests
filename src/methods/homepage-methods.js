@@ -73,6 +73,18 @@ const verifyHtmlLangAttribute = site =>
             .eql(site.lang, `Expected lang="${site.lang}" but got "${langAttr}"`);
     });
 
+const verifyDealFinderContainerLoaded = site =>
+    test(`${site.name}: deal finder is visible after loading`, async t => {
+        const container = Selector('#deal_finder_container').with({
+            visibilityCheck: true,
+            timeout: 7000
+        });
+    
+        await t
+            .expect(container.exists).ok('Deal finder container was not found in DOM')
+            .expect(container.visible).ok('Deal finder container is not visible after loading');
+        });
+
 module.exports = {
     verifyTopDestinationsSection,
     verifyTopDestinationsCount,
@@ -80,4 +92,5 @@ module.exports = {
     verifyOperatorsLogosCount,
     verifyH1InsideWrapper,
     verifyHtmlLangAttribute,
+    verifyDealFinderContainerLoaded
 };

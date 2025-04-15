@@ -5,6 +5,7 @@ const {
     verifyOperatorsLogosCount,
     verifyH1InsideWrapper,
     verifyHtmlLangAttribute,
+    verifyDealFinderContainerLoaded
 } = require('../methods/homepage-methods');
 
 const sites = [
@@ -23,4 +24,5 @@ sites.forEach(site => {
     verifyOperatorsLogosCount(site);
     verifyH1InsideWrapper(site);
     verifyHtmlLangAttribute(site);
+    verifyDealFinderContainerLoaded(site);
 });
