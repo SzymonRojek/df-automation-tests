@@ -32,7 +32,7 @@ Automated end-to-end (E2E) test suite developed with [TestCafe](https://testcafe
 
 ## 🧪 How to Run the Tests
 
-To run tests locally in Chrome:
+To run tests locally in Chrome or another browser:
 
 ```bash
 testcafe chrome src/tests/(filename).js
@@ -41,21 +41,19 @@ testcafe chrome src/tests/(filename).js
 # 💡 If I Had More Time...
 Given more time, I would:
 
-## 🔍 Explore the website more deeply using DevTools
+### 🔍 Explore the website more deeply using DevTools
 Better understand the structure, async behavior, and route logic behind DealFinder.
 
-## 🧩 Integrate with Cucumber
+### 🧩 Integrate with Cucumber
 Improve readability and maintainability by expressing test cases in Gherkin syntax, bridging the gap between technical and non-technical stakeholders.
 
-## 📦 Refactor helper functions
+### 📦 Refactor helper functions
 Improve modularity by organizing reusable actions (e.g., route selection, quote checking, etc.) into dedicated modules.
 
-## 🧪 Write more test scenarios
+### 🧪 Write more test scenarios
 Including: navigation elements, booking simulations, mobile/responsive behavior, and regression coverage across languages.
 
 
 # 🙏 Final Thoughts
-Thanks for the opportunity to work on these tasks.
+Thank you for the opportunity to work on these tasks.
 Especially the third task (route-checking) was both challenging and rewarding. It highlighted the complexity behind ferry route mapping and dynamic quote generation, and made me eager to dive deeper into these patterns.
-
-I hope this test suite serves as a solid foundation and demonstrates a thoughtful, maintainable approach to end-to-end testing.
