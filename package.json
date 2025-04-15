@@ -1,0 +1,15 @@
+{
+  "name": "df-automation-tests",
+  "version": "1.0.0",
+  "description": "written tests with testcafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Szymon Rojek",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.5.3",
+    "testcafe": "^3.7.2"
+  }
+}
