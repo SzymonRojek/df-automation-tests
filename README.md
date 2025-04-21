@@ -44,10 +44,8 @@ Selector(`[data-testid="result-section-0"] button[data-testid="${formattedRoute}
 
 🧠 Works dynamically, because it's based on the route value, not a hardcoded button or index.
 
-# 💡 If I Had More Time...
-Given more time, I would:
+# 💡 Given more time, I would:
 
-### 🔍 Explore the website more deeply using DevTools
 - Improve understanding of the structure, async behavior on the pages, especially better understand the route logic.
 
 - Optionally, create a class to keep all selectors organized in one place.
