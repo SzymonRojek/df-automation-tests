@@ -9,15 +9,12 @@ Automated E2E tests suite developed with Gherkin, Cucumber and TestCafe.
    - 🇮🇹 `www.directferries.it`  
 
 2. **Validated Booking and Sign In sites:**  
-   Ive validated two sites:  
-   Booking https://account.directferries.com/?culture=en-GB
-   and 
-   Login (SignIn) https://account.directferries.com/signin?tab=sign-in
+ I have validated two sites instead of one: [Booking](https://account.directferries.com/?culture=en-GB) and [Login (SignIn)](https://account.directferries.com/signin?tab=sign-in).
 
 
 3. **Fixed failing route-check feature for Scenarios 1 & 3**  
    
-   I have rewritten the selectRoute method:
+   I have rewritten the **selectRoute** method:
 
    ```
      selectRoute: async function (leg, route) {
@@ -48,4 +45,4 @@ Selector(`[data-testid="result-section-0"] button[data-testid="${formattedRoute}
 
 - Improve understanding of the structure, async behavior on the pages, especially better understand the route logic.
 
-- Optionally, create a class to keep all selectors organized in one place.
+- Optionally, create a class to keep all selectors organised in one place.
