@@ -1,9 +1,14 @@
 const { Selector, t } = require('testcafe');
 
 module.exports = {
-    onHomepage: async function () {
+    onHomepage: async function (url) {
+        // Navigate to the homepage and accept cookie consent
         await t
-        .navigateTo('https://www.directferries.de')
-        .click(Selector('[data-cky-tag="accept-button"]'));
-    }
-}
+            .navigateTo(url)
+            .click(Selector('[data-cky-tag="accept-button"]'));
+    },
+    onLoginForm: async function (url) {
+        await t
+        .navigateTo(url);
+    },
+};

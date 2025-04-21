@@ -1,61 +1,53 @@
 # 💻 Direct Ferries E2E Tests (TestCafe)
 
-Automated end-to-end (E2E) test suite developed with [TestCafe](https://testcafe.io/), focused on validating critical user journeys on the [directferries.co.uk](https://www.directferries.co.uk/) website and its international equivalents.
-
----
+Automated E2E tests suite developed with Gherkin, Cucumber and TestCafe.
 
 ## ✅ Completed Tasks
 
-1. **Multi-Locale Test Coverage**  
-   Extended support for different site versions:  
-   - 🇬🇧 `www.directferries.co.uk`  
+1. **Extended the test coverage for sites:**   
+   - 🇬🇧 `www.directferries.de`  
    - 🇮🇹 `www.directferries.it`  
 
-2. **User Login Validation**  
-   Created test cases for invalid login attempts on the account portal:  
-   `https://account.directferries.com/?culture=en-GB`  
-   (2 tests are expected to fail to validate proper error handling).
+2. **Validated Booking and Sign In sites:**  
+   Ive validated two sites:  
+   Booking https://account.directferries.com/?culture=en-GB
+   and 
+   Login (SignIn) https://account.directferries.com/signin?tab=sign-in
 
-   **NOTE**: It is definitely worth adding a test that verifies whether a user can log in to the application using valid credentials. This test is an example of a **data-driven** test. It checks whether a user can successfully log in to the system using correct data (email and booking reference) in the testing environment. The test uses a data-driven approach to run the same login scenario with multiple sets of input data.
 
-3. **Route-Check Feature**  
-   Developed a utility method that verifies whether the correct outbound and return routes are displayed after a search is performed.
-
-   Initial failures in tests for routes were caused by:
-   - A modal popup (e.g. ky-notice) blocking UI interactions.
-   - Timing issues where quote elements were not fully visible or loaded.
+3. **Fixed failing route-check feature for Scenarios 1 & 3**  
    
-   These issues were partially mitigated. The tests now:
-   - Wait for the quote section to fully load.
-   - Close blocking popups (if present).
-   - Use improved text-matching logic to confirm displayed routes.
+   I have rewritten the selectRoute method:
 
----
+   ```
+     selectRoute: async function (leg, route) {
+        await t
+            .typeText(await getRoute(leg), " ") //type a space first as we sometimes have issues where the first type text doesn't register
+            .typeText(await getRoute(leg), route)
+            .click(await getRoute(leg))
 
-## 🧪 How to Run the Tests
+        const formattedRoute = route.replace(' - ', '-'); // "Amalfi - Neapel" -> "Amalfi-Neapel"
+        const matchingButton = Selector(`[data-testid="result-section-0"] button[data-testid="${formattedRoute}"]`);
+        await t.click(matchingButton)
+              .scroll('top')//only needed for tablet sized screens to scroll to top after click.
+    },
+   ```
 
-To run tests locally in Chrome or another browser:
+🔧 Added dynamic mapping from route → data-testid
+→ route.replace(' - ', '-') allows converting "Amalfi - Neapel" to match the button's data-testid="Amalfi-Neapel"
 
-```bash
-testcafe chrome src/tests/(filename).js
+🔍 Instead of clicking the first button, the method now selects the specific matching button:
 ```
+Selector(`[data-testid="result-section-0"] button[data-testid="${formattedRoute}"]`)
+```
+→ This ensures that exactly the button corresponding to the searched route is selected.
+
+🧠 Works dynamically, because it's based on the route value, not a hardcoded button or index.
 
 # 💡 If I Had More Time...
 Given more time, I would:
 
 ### 🔍 Explore the website more deeply using DevTools
-Better understand the structure, async behavior, and route logic behind DealFinder.
+- Improve understanding of the structure, async behavior on the pages, especially better understand the route logic.
 
-### 🧩 Integrate with Cucumber
-Improve readability and maintainability by expressing test cases in Gherkin syntax, bridging the gap between technical and non-technical stakeholders.
-
-### 📦 Refactor helper functions
-Improve modularity by organizing reusable actions (e.g., route selection, quote checking, etc.) into dedicated modules.
-
-### 🧪 Write more test scenarios
-Including: navigation elements, booking simulations, mobile/responsive behavior, and regression coverage across languages.
-
-
-# 🙏 Final Thoughts
-Thank you for the opportunity to work on these tasks.
-Especially the third task (route-checking) was both challenging and rewarding. It highlighted the complexity behind ferry route mapping and dynamic quote generation, and made me eager to dive deeper into these patterns.
+- Optionally, create a class to keep all selectors organized in one place.

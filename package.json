@@ -4,12 +4,17 @@
   "description": "written tests with testcafe",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gherkin-testcafe chrome src/steps/**/* src/features/** --skip-js-errors"
   },
   "author": "Szymon Rojek",
   "license": "ISC",
   "dependencies": {
-    "prettier": "^3.5.3",
+    "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.9.0",
+    "cucumber": "^6.0.7",
+    "gherkin-testcafe": "^7.4.0",
     "testcafe": "^3.7.2"
   }
 }
