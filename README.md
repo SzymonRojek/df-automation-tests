@@ -2,6 +2,12 @@
 
 Automated E2E tests suite developed with Gherkin, Cucumber and TestCafe.
 
+Run the script by using command:
+
+```
+npm run test
+```
+
 ## ✅ Completed Tasks
 
 1. **Extended the test coverage for sites:**   
