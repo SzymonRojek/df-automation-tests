@@ -72,6 +72,8 @@ Selector(`[data-testid="result-section-0"] button[data-testid="${formattedRoute}
 
 # 💡 Given more time, I would:
 
-- Improve understanding of the structure and asynchronous behavior of the pages, with a particular focus on route logic. This will likely come through hands-on work, reviewing mapping documents, and collaborating with developers and solution designers/architects.
+-  I believe that in the first task, within the homepage-tests.feature file, the string values like 'German', 'Italian', and 'UK' could be handled dynamically, which would reduce the number of scenarios. Based on that, the step definitions could then dynamically pass the appropriate URL. However, for now, I’ve left the task as it is — although, on the other hand, the current approach is quite readable. It would also be interesting to hear other testers’ opinions on this — whether the DRY principle should always be applied, or if in some cases, readability and clarity might take precedence.
+
+- Improve understanding of the structure and asynchronous behavior of the pages, with a particular focus on route logic (task 3). This will likely come through hands-on work, reviewing mapping documents, and collaborating with developers and solution designers/architects.
 
 - Optionally, create a class to keep all selectors organised in one place.
