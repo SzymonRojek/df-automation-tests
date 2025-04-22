@@ -2,10 +2,13 @@ const { Selector, t } = require('testcafe');
 
 module.exports = {
     onHomepage: async function (url) {
-        // Navigate to the homepage and accept cookie consent
         await t
             .navigateTo(url)
-            .click(Selector('[data-cky-tag="accept-button"]'));
+        
+        if (!(url.includes('.uk'))) {
+            const acceptButton = Selector('[data-cky-tag="accept-button"]');
+            await t.click(acceptButton);
+        }
     },
     onLoginForm: async function (url) {
         await t

@@ -4,7 +4,8 @@
   "description": "written tests with testcafe",
   "main": "index.js",
   "scripts": {
-    "test": "gherkin-testcafe chrome src/steps/**/* src/features/** --skip-js-errors"
+    "test": "gherkin-testcafe chrome src/steps/**/* src/features/** --skip-js-errors",
+    "end": "gherkin-testcafe chrome df/steps/**/* df/features/** --skip-js-errors"
   },
   "author": "Szymon Rojek",
   "license": "ISC",
